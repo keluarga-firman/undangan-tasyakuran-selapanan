@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Tasyakuran Zahir - Adat Jawa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Crimson Text', serif; max-width: 480px; margin: 0 auto; background: #1a0f0a; color: #fdf6e3; scroll-behavior: smooth; }
+        .font-jawa { font-family: 'Cinzel', serif; }
+        .font-script { font-family: 'Great Vibes', cursive; }
+        
+        .bg-keraton {
+            background-color: #fdf6e3;
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+            color: #3e2723;
+        }
+
+        .gunungan-asset {
+            width: 110px;
+            height: auto;
+            mix-blend-mode: multiply; 
+            filter: sepia(1) saturate(5) hue-rotate(5deg) brightness(0.7);
+            animation: sway 6s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .photo-frame {
+            width: 220px;
+            height: 200px;
+            border-radius: 115px;
+            border: 4px solid #b8860b;
+            padding: 10px;
+            background: #fff;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 105px;
+        }
+
+        .text-gold { color: #b8860b; }
+        .bg-sogan { background-color: #3e2723; }
+
+        .scroll-side-indicator {
+            position: absolute;
+            right: 20px;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            z-index: 40;
+            transition: all 0.5s ease;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, #b8860b);
+        }
+
+        .scroll-text-side {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #b8860b;
+            font-weight: bold;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="shadow-2xl min-h-screen border-x-4 border-[#b8860b]">
+
+    <section class="bg-keraton h-screen flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+        <div class="mb-2 z-20">
+            <img src="image-removebg-preview.png" alt="Gunungan Wayang" class="gunungan-asset mx-auto">
+        </div>
+        <p class="font-jawa uppercase tracking-[0.4em] text-[10px] text-amber-900 mb-6">Undangan Tasyakuran Selapanan</p>
+        <div class="photo-frame mb-8">
+            <img src="zahir2.png" alt="Zahir Lavendra">
+        </div>
+        <h1 class="text-3xl font-jawa font-bold text-[#3e2723] leading-none uppercase">Zahir Lavendra</h1>
+        <p class="font-script text-4xl text-gold mt-2 mb-8">Fivaro Syahputra</p>
+        <div class="p-4 border border-amber-900/20 rounded-lg bg-white/40 backdrop-blur-sm">
+            <p class="text-[10px] uppercase tracking-widest text-amber-900">Kepada Yth:</p>
+            <p class="text-lg font-bold text-[#3e2723]">Tamu Undangan</p>
+        </div>
+        <div id="scrollArrow" class="scroll-side-indicator">
+            <p class="scroll-text-side">Scroll Down</p>
+            <div class="scroll-line"></div>
+            <div class="animate-bounce text-gold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section id="content" class="bg-sogan p-10 text-center text-[#fdf6e3] relative">
+        <h2 class="font-script text-4xl text-gold mb-6">Assalamu'alaikum Wr. Wb.</h2>
+        <p class="text-xs leading-loose font-light mb-10 opacity-90 px-2">
+            Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara Tasyakuran Selapanan (35 Hari) putra kami:
+        </p>
+        <div class="mb-10 py-6 border-y border-gold/20">
+            <h3 class="text-2xl font-jawa text-gold tracking-widest mb-2 px-4 uppercase">Zahir Lavendra Fivaro Syahputra</h3>
+            <p class="text-xs italic opacity-70">Putra Pertama dari:</p>
+            <p class="text-sm font-bold mt-1 uppercase">Bapak Firman & Ibu Vira</p>
+        </div>
+        <div class="bg-white/5 border border-gold/30 rounded-3xl p-6 mb-10 shadow-inner">
+            <p class="font-jawa text-gold mb-4 uppercase text-xs tracking-[0.2em]">Agenda Acara</p>
+            <div class="grid grid-cols-4 gap-2 mb-6" id="countdown">
+                <div class="bg-[#2c1810] p-2 rounded-lg border border-gold/20 shadow">
+                    <span id="days" class="block text-xl font-bold text-gold">0</span>
+                    <span class="text-[8px] uppercase opacity-60 font-bold">Hari</span>
+                </div>
+                <div class="bg-[#2c1810] p-2 rounded-lg border border-gold/20 shadow">
+                    <span id="hours" class="block text-xl font-bold text-gold">0</span>
+                    <span class="text-[8px] uppercase opacity-60 font-bold">Jam</span>
+                </div>
+                <div class="bg-[#2c1810] p-2 rounded-lg border border-gold/20 shadow">
+                    <span id="minutes" class="block text-xl font-bold text-gold">0</span>
+                    <span class="text-[8px] uppercase opacity-60 font-bold">Menit</span>
+                </div>
+                <div class="bg-[#2c1810] p-2 rounded-lg border border-gold/20 shadow">
+                    <span id="seconds" class="block text-xl font-bold text-gold">0</span>
+                    <span class="text-[8px] uppercase opacity-60 font-bold">Detik</span>
+                </div>
+            </div>
+            <p class="text-lg font-bold">Senin, 2 Maret 2026</p>
+            <p class="text-sm opacity-80 italic">Pukul 20.00 WIB (Ba'da Tarawih)</p>
+        </div>
+
+        <div class="rounded-3xl overflow-hidden shadow-2xl border-2 border-gold/30 mb-8 h-96 relative">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1000!2d112.7203565!3d-7.4973701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjknNTAuNSJTIDExMsKwNDMnMTMuMyJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid&zoom=18" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+<a href="https://www.google.com/maps/search/?api=1&query=-7.4973701,112.7203565" target="_blank" 
+   class="w-full bg-[#b8860b] text-[#3e2723] py-4 rounded-full font-bold text-xs uppercase tracking-widest shadow-xl inline-flex items-center justify-center gap-2 active:scale-95 transition-all mb-20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            </svg>
+            Petunjuk Lokasi (Google Maps)
+        </a>
+    </section>
+
+    <footer class="p-10 text-center bg-[#150a06] text-[9px] text-gold/40 tracking-[0.4em]">
+        MATUR NUWUN - KELUARGA FIRMAN & VIRA
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const arrow = document.getElementById('scrollArrow');
+            if (window.scrollY > 50) {
+                arrow.style.opacity = '0';
+            } else {
+                arrow.style.opacity = '1';
+            }
+        });
+
+        const targetDate = new Date("March 2, 2026 20:00:00").getTime();
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            if (diff < 0) { 
+                clearInterval(timer); 
+                document.getElementById("countdown").innerHTML = "<p class='col-span-4 text-gold font-bold uppercase tracking-widest'>Acara Berlangsung</p>";
+                return; 
+            }
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
